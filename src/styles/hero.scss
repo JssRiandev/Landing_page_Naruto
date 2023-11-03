@@ -1,0 +1,79 @@
+@use 'variaveis';
+
+.hero { 
+    padding: 2vw;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    min-height: 80vh;
+    text-align: center;
+    
+    @media(max-width: 768px){
+        display: block;
+    }
+
+    @media (min-width: 769px) and (max-width: 1023px){
+        display: block;
+    }
+
+    &__content {
+        max-width: 680px;
+
+        @media (min-width: 769px) and (max-width: 1023px){
+                margin: 0 auto;
+                margin-bottom: 50px;
+        }
+
+        &__branding{
+            max-width: 450px;
+            margin: 0 auto 34px;
+
+            img{
+                width: 100%;
+
+                @media (min-width: 769px) and (max-width: 1023px){
+                    width: 50%;
+                }
+            }
+            
+            @media(max-width: 768px){
+                width: 30%;
+                margin: 0 auto 18px;
+            }
+            
+        } 
+
+        .text{
+            margin: 20px 0;
+
+            @media(max-width: 768px){
+            margin-bottom: 6px;
+            
+        }
+        }
+
+        .button{
+            width: 50%;
+            margin: 0 auto;
+
+            @media(max-width: 768px){
+                width: 40%;
+                margin-bottom: 48px;
+            }
+
+        }
+    }
+    .folder{
+        width: 100%;
+        margin-top: -10%;
+        
+        @media(max-width: 768px){
+            margin:0;
+            width: 95%;
+        }
+
+        @media (min-width: 769px) and (max-width: 1023px){
+                margin: 0;
+        }
+    }
+
+    }

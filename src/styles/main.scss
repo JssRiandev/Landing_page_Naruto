@@ -1,0 +1,82 @@
+@use 'variaveis';
+@use 'header';
+@use 'hero';
+@use 'about';
+@use 'characters';
+@use 'watch';
+@use 'footer';
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+@mixin text($font_size: 32px){
+    font-family: 'Kanit', sans-serif;
+    font-size: $font_size;
+    line-height: $font_size +10px;
+    color: variaveis.$cor_texto_principal;
+}
+
+body{
+    background-color: variaveis.$cor_fundo;
+}
+
+.text{
+    @include text;
+    font-weight: bold;
+    @media(max-width: 768px){
+        @include text(24px);
+    }
+    
+}
+
+.text--big{
+    @include text(40px);
+    font-weight: bold;
+
+    @media(max-width: 768px){
+        @include text(32px);
+        line-height: 35px;
+    }
+}
+
+.text--small{
+    @include text(24px);
+    font-weight: normal;
+
+    @media(max-width: 768px){
+        @include text(20px);
+        line-height: 28px;
+    }
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    color: variaveis.$cor_fundo;
+    background-color: variaveis.$cor_btn;
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 10px 64px;
+    cursor: pointer;
+    @media(max-width: 768px){
+        height: 40px;
+        padding: 5px 32px;
+    }
+
+    &:hover{
+        background-color: darken(variaveis.$cor_btn, 5%);
+    }
+}
+
